@@ -1,9 +1,9 @@
 <?php
 
 	try {
-		$conexion = new PDO('mysql:localhost;dbname=login','root','')
+		$conexion = new PDO('mysql:host=localhost;dbname=login_cun','root','');
 	} catch (PDOException $e) {
-		echo "Error". $e->getMessage();
+		echo "Error:" . $e->getMessage();
 	}
 
 ?>
