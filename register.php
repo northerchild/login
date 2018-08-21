@@ -1,7 +1,7 @@
 <?php session_start();
 
-    if(isset($_SESSION['usuario'])) {
-        header('location: index.php');
+   if (isset($_SESSION['usuarios'])) {
+        header("Location: index.php");
     }
 
     
@@ -32,7 +32,7 @@
             $resultado = $statement->fetch();
             
                         
-            if ($resultado != false){
+            if ($resultado){
                 $error .= '<i>Este usuario ya existe</i>';
             }
             
@@ -46,7 +46,7 @@
         if ($error == ''){
             $statement = $conexion->prepare('INSERT INTO usuarios (id,usuario, pass) VALUES (null, :usuario, :clave)');
             $statement->execute(array(':usuario' => $usuario,':clave' => $clave));  
-            $error .= '<i style="color: green;">Usuario registrado exitosamente</i>';
+            header('location: login.php');
         }
     }
 

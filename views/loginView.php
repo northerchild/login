@@ -31,6 +31,11 @@
                 <label class="lnr lnr-lock"></label>
                 <input type="password" placeholder="Contraseña" name="clave">
             </div>
+	            <?php if(!empty($error)): ?>
+	            <div class="mensaje">
+	                <?php echo $error; ?>
+	            </div>
+	            <?php endif; ?>
             <button type="submit">Entrar<label class="lnr lnr-chevron-right"></label></button>
 		</form>
 	</div>
