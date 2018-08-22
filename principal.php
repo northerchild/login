@@ -1,9 +1,9 @@
 <?php session_start();
 
-	if (isset($_SESSION['usuario'])) {
-		require_once "views/principalView.php";
-	}else{
-		header('Location: login.php');
-	}
+	if(isset($_SESSION['usuario'])){
+        require 'views/principalView.php';
+    }else{
+        header ('location: login.php');
+    }
 
 ?>
